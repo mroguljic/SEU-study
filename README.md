@@ -3,8 +3,8 @@ Studying energy deposition in a sensitive area of an electronic chip. If a large
 
 
 Tested on ubuntu 14.04. LTS  
-Simulations are performed using Geant (4.10.3)            - https://geant4.web.cern.ch/.
-To install geant4 and compile the code, cmake 3 is needed -https://cmake.org/download/  
+Simulations are performed using Geant (4.10.3)            - https://geant4.web.cern.ch/  
+To install geant4 and compile the code, cmake 3 is needed -https://cmake.org/download/    
 Root is required to look at the output                   - https://root.cern.ch/  
  
 To compile:  
