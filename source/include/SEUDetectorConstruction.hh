@@ -19,11 +19,11 @@ class SEUDetectorConstruction : public G4VUserDetectorConstruction
     virtual G4VPhysicalVolume* Construct();
     
     G4LogicalVolume* GetScoringVolume() const { return fScoringVolume; }
-    G4Region* 		 GetScoringRegion() const { return fScoringRegion; }
+    G4Region*        GetScoringRegion() const { return fScoringRegion; }
 
 
-	private:
-  	G4UserLimits* fStepLimit;
+  private:
+    G4UserLimits* fStepLimit;
 
 
   protected:

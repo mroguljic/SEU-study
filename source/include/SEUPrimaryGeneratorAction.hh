@@ -21,10 +21,10 @@ class SEUPrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction
     const G4ParticleGun* GetParticleGun() const { return fParticleGun; }
   
   private:
-  	G4double		particleEnergy;
-  	G4double		ionZ;
-  	G4double		ionA;
-  	G4double		ionCharge;
+    G4double        particleEnergy;
+    G4double        ionZ;
+    G4double        ionA;
+    G4double        ionCharge;
     G4ParticleGun*  fParticleGun;
 };
 

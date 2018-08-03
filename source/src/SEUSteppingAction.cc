@@ -70,9 +70,9 @@ void SEUSteppingAction::UserSteppingAction(const G4Step* step)
 
   if(edepStep>0.){
     analysisManager->FillH1(0,z,edepStep);
-	  analysisManager->FillNtupleDColumn(1,0,z);
-	  analysisManager->FillNtupleDColumn(1,1,edepStep);
-	  analysisManager->FillNtupleDColumn(1,2,kinEnergy);
+    analysisManager->FillNtupleDColumn(1,0,z);
+    analysisManager->FillNtupleDColumn(1,1,edepStep);
+    analysisManager->FillNtupleDColumn(1,2,kinEnergy);
     analysisManager->AddNtupleRow(1);
   }
 
