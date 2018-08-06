@@ -101,9 +101,15 @@ G4VPhysicalVolume* SEUDetectorConstruction::Construct()
   new G4PVPlacement(0, G4ThreeVector(0.,0.,aluminum3Position), aluminum3Logic, "aluminum3", logicWorld, false, 0, checkOverlaps);
 
   G4double detPosition            = 2*SurfaceHz+2*aluminum1Hz+2*quartz1Hz+2*aluminum2Hz+2*quartz2Hz+2*aluminum3Hz+detHz;
-  G4Box* detSolid                 = new G4Box("Detector", TBMhx, TBMhx, detHz); 
-  G4LogicalVolume* detLogic       = new G4LogicalVolume(detSolid, silicon, "Detector");  
-  new G4PVPlacement(0, G4ThreeVector(0.,0.,detPosition), detLogic, "Detector", logicWorld, false, 0, checkOverlaps);
+  
+  G4VSolid* siliconLayer          = new G4Box("siliconLayer", TBMhx, TBMhx, detHz); 
+  G4VSolid* sensitiveArea         = new G4Box("sensitiveArea", 7.5*mu, 22.5*mu, detHz);
+  G4VSolid *siliconSolid          = new G4SubtractionSolid("siliconSolid", siliconLayer, sensitiveArea); 
+  G4LogicalVolume* siliconLogic   = new G4LogicalVolume(siliconSolid, silicon, "siliconLayer");  
+  new G4PVPlacement(0, G4ThreeVector(0.,0.,detPosition), siliconLogic, "siliconLayer", logicWorld, false, 0, checkOverlaps);
+
+  G4LogicalVolume* sensitiveLogic = new G4LogicalVolume(sensitiveArea, silicon, "sensitiveArea");  
+  new G4PVPlacement(0, G4ThreeVector(0.,0.,detPosition), sensitiveLogic, "sensitiveArea", logicWorld, false, 0, checkOverlaps);
 
 
 
@@ -118,14 +124,16 @@ G4VPhysicalVolume* SEUDetectorConstruction::Construct()
   TBM->AddRootLogicalVolume(quartz1Logic);
   quartz2Logic->SetRegion(TBM);
   TBM->AddRootLogicalVolume(quartz2Logic);
-  detLogic->SetRegion(TBM);
-  TBM->AddRootLogicalVolume(detLogic);
+  siliconLogic->SetRegion(TBM);
+  TBM->AddRootLogicalVolume(siliconLogic);
+  sensitiveLogic->SetRegion(TBM);
+  TBM->AddRootLogicalVolume(sensitiveLogic);
 
   G4double maxStep = 0.03*mu;
   fStepLimit = new G4UserLimits(maxStep);
   TBM->SetUserLimits(fStepLimit);
 
-  fScoringVolume = detLogic;
+  fScoringVolume = sensitiveLogic;
   fScoringRegion = TBM;
   //
   //always return the physical World
