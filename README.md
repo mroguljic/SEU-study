@@ -7,22 +7,18 @@ Simulations are performed using Geant (4.10.3)            - https://geant4.web.c
 To install geant4 and compile the code, cmake 3 is needed -https://cmake.org/download/    
 Root is required to look at the output                   - https://root.cern.ch/  
  
-To compile:  
+To compile, create a directory (SEU) and copy the source directory in it. From SEU directory, do:
 ```
-mkdir SEU  
-copy /source directory into SEU  
 mkdir build  
 cd build  
 cmake -DGeant4_DIR=...../geantInstallation/lib/Geant4-10.3.3 ../source  
 make  
 ```
  
- To run: 
+To run, edit configuration.txt according to your needs (particleType can be ignored, just set Z and A),edit run.mac to set the number of particles:
  ```
 source ..../geantInstallation/bin/geant4.sh (or .csh)
 cd build
-edit configuration.txt according to your needs  
-edit run.mac to set the number of particles  
 ./SEU run.mac  
   ```
          
