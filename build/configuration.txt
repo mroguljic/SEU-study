@@ -1,7 +1,0 @@
-particleEnergy=10.0
-detectorThickness=0.002
-outputTree=output.root
-particleType=proton
-ionZ=1
-ionA=1
-ionCharge=1
