@@ -9,22 +9,21 @@ Root is required to look at the output                   - https://root.cern.ch/
  
 To compile:  
 ```
-
-            mkdir SEU  
-            copy /source directory into SEU  
-            mkdir build  
-            cd build  
-            cmake -DGeant4_DIR=...../geantInstallation/lib/Geant4-10.3.3 ../source  
-            make  
+mkdir SEU  
+copy /source directory into SEU  
+mkdir build  
+cd build  
+cmake -DGeant4_DIR=...../geantInstallation/lib/Geant4-10.3.3 ../source  
+make  
 ```
  
  To run: 
  ```
-            source ..../geantInstallation/bin/geant4.sh (or .csh)
-            cd build
-            edit configuration.txt according to your needs  
-            edit run.mac to set the number of particles  
-            ./SEU run.mac  
+source ..../geantInstallation/bin/geant4.sh (or .csh)
+cd build
+edit configuration.txt according to your needs  
+edit run.mac to set the number of particles  
+./SEU run.mac  
   ```
          
 
