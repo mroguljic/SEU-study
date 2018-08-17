@@ -25,7 +25,7 @@ SEURunAction::SEURunAction()
   accumulableManager->RegisterAccumulable(fEdep);
 
   // set printing event number per each event
-  //G4RunManager::GetRunManager()->SetPrintProgress(1000000);  
+  G4RunManager::GetRunManager()->SetPrintProgress(100000);  
 
   //Random seeds
   long seeds[2];

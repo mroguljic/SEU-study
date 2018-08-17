@@ -52,6 +52,9 @@ void SEUSteppingAction::UserSteppingAction(const G4Step* step)
   // check if we are in region of interest
   if (region != fScoringRegion) return;
 
+/*  if(pName!="proton" && pName!="e-" && pName!="C12")
+  	std::cout<<pName<<"\n";*/
+
 
   if(preStepVolume->GetName()!="World"){  
     //We get a seg fault if we access postStep at the last step of the event, last step means

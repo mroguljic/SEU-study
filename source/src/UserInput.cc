@@ -23,6 +23,7 @@ UserInput::UserInput(){
   ionZ           = stoi(cfgParams["ionZ"]);
   ionA           = stoi(cfgParams["ionA"]);
   ionCharge      = stod(cfgParams["ionCharge"])*eplus;
+  maxStepLength  = stod(cfgParams["maxStep"])*um;
 
 }
 

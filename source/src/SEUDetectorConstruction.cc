@@ -129,7 +129,7 @@ G4VPhysicalVolume* SEUDetectorConstruction::Construct()
   sensitiveLogic->SetRegion(TBM);
   TBM->AddRootLogicalVolume(sensitiveLogic);
 
-  G4double maxStep = 0.03*mu;
+  G4double maxStep = input.GetMaxStepLength();
   fStepLimit = new G4UserLimits(maxStep);
   TBM->SetUserLimits(fStepLimit);
 

@@ -24,6 +24,7 @@ public:
   double GetIonZ(){return ionZ;}
   double GetIonA(){return ionA;}
   double GetIonCharge(){return ionCharge;}
+  double GetMaxStepLength(){return maxStepLength;}
   std::string GetTreeFileName(){return treeFile;}
   std::string GetParticleType(){return particleType;}
 
@@ -34,6 +35,7 @@ public:
   double ionZ;
   double ionA;
   double ionCharge;
+  double maxStepLength;
   std::string particleType;
   std::string treeFile;
 };

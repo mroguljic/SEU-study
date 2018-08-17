@@ -5,3 +5,4 @@ particleType=proton
 ionZ=1
 ionA=1
 ionCharge=1
+minStep=0.5
